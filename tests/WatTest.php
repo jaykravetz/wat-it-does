@@ -31,6 +31,8 @@ class WatTest extends \PHPUnit_Framework_TestCase
      *
      * @testWith ["20161", 2016, "January"]
      *  ["201612", 2016, "December"]
+     *  ["20155", 2015, "May"]
+     *  ["201610", 2016, "October"]
      */
     public function test_that_it_can_parse_year_month($input, $expectedYear, $expectedMonth)
     {
