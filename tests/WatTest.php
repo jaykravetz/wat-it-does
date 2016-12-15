@@ -20,4 +20,34 @@ class WatTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('Pur', $res2);
         $this->assertEquals('ple', $s2);
     }
+
+
+    /**
+     * @test
+     *
+     * @param string $input
+     * @param int    $expectedYear
+     * @param string $expectedMonth
+     *
+     * @testWith ["20161", 2016, "January"]
+     *  ["201612", 2016, "December"]
+     */
+    public function test_that_it_can_parse_year_month($input, $expectedYear, $expectedMonth)
+    {
+        $w = new Wat();
+
+        // Copy the variables because the shift method uses a reference
+        $inputString = $input;
+
+        $yearValue  = $w->_string_shift($inputString, 4);
+        $monthValue =  $inputString;
+
+        $monthDate = \DateTime::createFromFormat('n', $monthValue);
+
+        $actualMonth = $monthDate->format('F');
+
+        $this->assertEquals($expectedYear, $yearValue, sprintf('Actual year is not %s as expected', $expectedYear));
+        $this->assertEquals($expectedMonth, $actualMonth, sprintf('Actual year is not %s as expected', $expectedMonth));
+
+    }
 }
