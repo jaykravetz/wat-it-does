@@ -14,6 +14,4 @@ before_script:
 script: vendor/bin/codecept run
 
 after_success:
-  - echo WASSUP!!
-  - cat /etc/nginx/sites-enabled/default
-  - curl http://localhost
+  - echo $TRAVIS_COMMIT
