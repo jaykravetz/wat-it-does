@@ -7,6 +7,8 @@ addons:
 before_script:
   - sudo apt-get install nginx
   - composer self-update && composer install
+  - cp conf/nginx.conf /etc/nginx/sites-enabled/nginx.conf
+  - sudo service nginx restart
 
 after_success:
   - echo WASSUP!!
