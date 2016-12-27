@@ -1,3 +1,6 @@
 .idea/
 vendor
 composer.lock
+cept/_output/*
+cept/_support/_generated/*
+cept/**/*Tester.php

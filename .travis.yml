@@ -9,6 +9,9 @@ before_script:
   - composer self-update && composer install
   - sudo cp conf/nginx.conf /etc/nginx/sites-enabled/nginx.conf
   - sudo service nginx restart
+  - vendor/bin/codecept build
+
+script: vendor/bin/codecept run
 
 after_success:
   - echo WASSUP!!
