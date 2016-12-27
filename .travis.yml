@@ -11,3 +11,4 @@ before_script:
 after_success:
   - echo WASSUP!!
   - cat /etc/nginx/sites-enabled/default
+  - curl http://localhost
