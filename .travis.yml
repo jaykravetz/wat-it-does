@@ -7,3 +7,6 @@ addons:
 before_script:
   - sudo apt-get install nginx
   - composer self-update && composer install
+
+after_pass:
+  - cat /etc/nginx/sites-enabled/default
