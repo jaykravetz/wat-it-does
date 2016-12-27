@@ -14,4 +14,5 @@ before_script:
 script: vendor/bin/codecept run
 
 after_success:
+  - cat /etc/hosts
   - echo $TRAVIS_COMMIT
