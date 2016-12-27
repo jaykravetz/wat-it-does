@@ -7,5 +7,3 @@ addons:
 before_script:
   - sudo apt-get install nginx
   - composer self-update && composer install
-
-install: composer install
