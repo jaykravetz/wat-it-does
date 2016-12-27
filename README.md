@@ -3,3 +3,5 @@
 # wat-it-does
 What the heck is this?
 
+No running on CodeShip
+
