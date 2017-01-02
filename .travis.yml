@@ -11,7 +11,9 @@ before_script:
   - sudo service nginx restart
   - vendor/bin/codecept build
 
-script: vendor/bin/codecept run
+script:
+  - vendor/bin/codecept run
+  - phpunit
 
 after_success:
   - cat /etc/hosts
